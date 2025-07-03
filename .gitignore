@@ -1,0 +1,50 @@
+# Ignore Drupal core and contrib packages if using Composer
+/vendor/
+/core/
+/modules/contrib/
+/themes/contrib/
+/profiles/contrib/
+
+# Ignore private files and settings
+/sites/default/settings.php
+/sites/default/settings.local.php
+/sites/default/services.yml
+/sites/*/settings.php
+/sites/*/settings.local.php
+/sites/*/services.yml
+
+# Ignore user-uploaded files
+/sites/default/files/
+/sites/*/files/
+
+# Ignore simpletest files
+/sites/simpletest
+
+# Ignore node and other build artifacts
+/node_modules/
+/npm-debug.log
+/yarn-error.log
+
+# Ignore IDE and OS files
+*.swp
+*.swo
+*.DS_Store
+*.idea/
+*.vscode/
+*.log
+
+# Ignore composer / drush local files
+/drush/contrib/
+/.drush/
+/.drush.yml
+/.ddev/
+/.env
+
+# Ignore backup and tar files
+*.sql
+*.tar
+*.tar.gz
+*.zip
+
+# Ignore Docker build artifacts
+*.pid
