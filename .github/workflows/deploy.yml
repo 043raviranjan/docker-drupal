@@ -22,7 +22,7 @@ jobs:
       - name: Deploy Code to EC2
         run: |
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/ec2_key.pem ec2-user@${{ secrets.EC2_HOST }} << 'EOF'
-            cd /var/www/html/your-project-folder
+            cd /var/www/html/docker-drupal
             git pull origin master
             composer install --no-dev
             vendor/bin/drush cr
