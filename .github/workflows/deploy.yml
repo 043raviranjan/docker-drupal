@@ -19,6 +19,13 @@ jobs:
           echo "${{ secrets.EC2_KEY }}" > ~/.ssh/ec2_key.pem
           chmod 600 ~/.ssh/ec2_key.pem
 
+      - name: Debug Network Connectivity
+        run: |
+          echo "Pinging EC2 Host..."
+          ping -c 4 ${{ secrets.EC2_HOST }} || true
+          echo "Testing SSH port with nc..."
+          nc -zv ${{ secrets.EC2_HOST }} 22 || true
+
       - name: Deploy Code to EC2
         run: |
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/ec2_key.pem ec2-user@${{ secrets.EC2_HOST }} << 'EOF'
