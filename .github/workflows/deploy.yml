@@ -32,5 +32,5 @@ jobs:
             cd /var/www/html/docker-drupal
             git pull origin master
             composer install --no-dev
-            vendor/bin/drush cr
+            # vendor/bin/drush cr
           EOF
